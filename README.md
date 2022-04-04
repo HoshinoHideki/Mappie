@@ -25,6 +25,6 @@ Please note that currently Mappie can work only if run from the same folder as t
 I'm not currently developing this script further, but I plan to maybe go back to it once I've learned enough to improve it.
 As of right now, it has the bare minimum functionality to satisfy the need to quickly visually enumerate several dozen of pictures containing multiple speech bubbles.
 
-For a visual example, here's a page from the Public Domain comic strip, "The outbursts of Everett True, both raw and edited version."
+For a visual example, here's a page from the Public Domain comic strip, "The outbursts of Everett True", both raw and edited version.
 
-[/Edited/everett true [edited].jpg]
+[pic](/Edited/everett true [edited].jpg)
