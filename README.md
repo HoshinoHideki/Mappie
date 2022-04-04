@@ -27,4 +27,4 @@ As of right now, it has the bare minimum functionality to satisfy the need to qu
 
 For a visual example, here's a page from the Public Domain comic strip, "The outbursts of Everett True", both raw and edited version.
 
-![pic](everett true.jpg)
+![pic](/everett true.jpg)
