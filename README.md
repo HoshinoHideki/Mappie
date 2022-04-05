@@ -27,4 +27,6 @@ As of right now, it has the bare minimum functionality to satisfy the need to qu
 
 For a visual example, here's a page from the Public Domain comic strip, "The outbursts of Everett True", both raw and edited version.
 
-![pic](/everett true.jpg)
+|Before | After|
+|---|---|
+|![everett true](https://user-images.githubusercontent.com/11214981/161653290-fe1f6c81-5750-4804-b95e-d5a88c104300.jpg) | ![everett true  edited](https://user-images.githubusercontent.com/11214981/161653225-56d1caca-b769-4838-a73b-b60d03739fea.jpg)|
