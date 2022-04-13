@@ -1,6 +1,4 @@
 # resizable circle?
-# undo - reset
-# double number?
 
 import cv2  # Drawing on images.
 import easygui  # File opening gui.
@@ -22,7 +20,7 @@ def draw_circle(event, x, y, flags, param):
 
     if event == cv2.EVENT_LBUTTONDOWN:  # On left-click:
         previousVersions[count] = copy.copy(img)
-        print("Saving version" + str(count))
+        print("Saving version " + str(count))
         # Adds a backup version of the image.
 
         if count < 10:  # Small Circles for single digit numbers.
@@ -32,7 +30,7 @@ def draw_circle(event, x, y, flags, param):
         else:  # Big Circles.
             big_radius = 16
             small_radius = 14
-            position = (x - 8, y + 4)
+            position = (x - 14, y + 4)
 
         cv2.circle(img, (x, y), big_radius, (0, 0, 0), -1)
         # Draws a circle.
@@ -42,10 +40,10 @@ def draw_circle(event, x, y, flags, param):
             img,  # Image object.
             str(count),  # Number in the circle.
             position,  # Location of lower-left corner of the text
-            5,  # Number displayed in the circle
+            0,  # Number displayed in the circle
             0.6,  # Scale of font
             (0, 0, 255),  # Color red
-            thickness=1)
+            thickness=2)
 
         count += 1  # Increments the counter.
 
@@ -69,12 +67,9 @@ def save_image():
 openFile = easygui.fileopenbox()
 os.chdir(os.path.dirname(openFile))
 
-
 # Create a subdirectory where the program will put the edited files in.
-try:
+if not os.path.exists("./Edited"):
     os.mkdir("Edited")  # Makes a directory.
-except OSError:
-    print("Edited folder already exists")
 
 # Create an empty file list to store file names in.
 fileNameList = []  # Empty list for file names
@@ -96,8 +91,11 @@ for fileName in fileNameList:  # iterating through the file names)
     count = 1
     previousVersions = {}
 
+    # This will place circles on every click.
     cv2.setMouseCallback(fileName, draw_circle)  # Draws a circle on the spot.
-    key = cv2.waitKey(0)  # Wait for command.
+
+    # This will wait for keyboard inputs.
+    key = cv2.waitKey(0)
 
     while key != 27:  # Loop handles various commands.
         print(key)  # Utility information.
@@ -127,6 +125,6 @@ for fileName in fileNameList:  # iterating through the file names)
 
         key = cv2.waitKey(0)  # Wait for the next command.
 
-    if key == 27:  # breaks iteration
+    else:  # breaks iteration
         print("Aborting")
         break
